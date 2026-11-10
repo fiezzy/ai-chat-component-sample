@@ -1,0 +1,28 @@
+.panel {
+  position: relative;
+  width: 100%;
+  max-width: var(--column-width);
+  margin-inline: auto;
+  padding: var(--space-2) var(--space-4) var(--space-2);
+}
+
+.maskingWarning {
+  margin-bottom: var(--space-2);
+  padding-inline: var(--space-4);
+  color: var(--color-navy);
+  font-size: var(--text-sm);
+  animation: rise var(--duration-base) var(--ease-out);
+}
+
+.disclosure {
+  margin-top: var(--space-2);
+  font-size: var(--text-xs);
+  text-align: center;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+}

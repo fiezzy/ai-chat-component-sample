@@ -1,0 +1,116 @@
+.card {
+  --hover-duration: 220ms;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-1);
+  width: 100%;
+  height: 100%;
+  padding: var(--space-4);
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  text-align: left;
+  cursor: pointer;
+  transition:
+    background-color var(--hover-duration) var(--ease-out),
+    border-color var(--hover-duration) var(--ease-out),
+    box-shadow var(--hover-duration) var(--ease-out),
+    transform var(--hover-duration) var(--ease-out);
+}
+
+.card:hover,
+.card:focus-visible {
+  border-color: var(--color-line);
+  background: color-mix(in srgb, var(--color-surface) 80%, var(--color-cyan));
+  box-shadow: 0 6px 20px rgb(46 58 110 / 10%);
+  transform: translateY(-2px);
+}
+
+.card:active {
+  box-shadow: 0 2px 8px rgb(46 58 110 / 8%);
+  transform: translateY(0);
+  transition-duration: var(--duration-fast);
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  margin-bottom: var(--space-2);
+  border-radius: 50%;
+  background: var(--color-white);
+  color: var(--color-navy);
+  transition: background-color var(--hover-duration) var(--ease-out);
+}
+
+.icon svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  transition: transform var(--hover-duration) var(--ease-out);
+}
+
+.card:hover .icon,
+.card:focus-visible .icon {
+  background: var(--color-cyan);
+}
+
+.card:hover .icon svg,
+.card:focus-visible .icon svg {
+  transform: scale(1.1);
+}
+
+/* An up-right arrow: the same glyph as Send, tilted to say "ask this". */
+.arrow {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  width: 1.125rem;
+  height: 1.125rem;
+  color: var(--color-navy);
+  opacity: 0;
+  transform: translate(-4px, 4px) rotate(45deg);
+  transition:
+    opacity var(--hover-duration) var(--ease-out),
+    transform var(--hover-duration) var(--ease-out);
+}
+
+.arrow svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.card:hover .arrow,
+.card:focus-visible .arrow {
+  opacity: 1;
+  transform: translate(0, 0) rotate(45deg);
+}
+
+.topic {
+  font-size: var(--text-xs);
+}
+
+.question {
+  color: var(--color-navy);
+  font-family: var(--font-heading);
+  line-height: 1.4;
+}
+
+@media (width < 32rem) {
+  .card {
+    padding: var(--space-3);
+  }
+
+  .arrow {
+    top: var(--space-3);
+    right: var(--space-3);
+  }
+
+  .question {
+    font-size: var(--text-sm);
+  }
+}

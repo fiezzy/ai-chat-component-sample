@@ -1,0 +1,41 @@
+/* Brand values come from docs/hilbi-brand-tokens.md. The guide covers colour
+   and type only, so spacing, radii and motion are defined here. */
+:root {
+  --color-navy: #2e3a6e;
+  --color-cyan: #5bc8e0;
+  --color-pink: #ff4f8b;
+  --color-text: #5a6072;
+  --color-surface: #f4f6fa;
+  --color-white: #ffffff;
+
+  /* Derived from Navy, to keep hairlines inside the brand palette. */
+  --color-line: rgb(46 58 110 / 12%);
+  --color-focus: var(--color-navy);
+
+  --font-heading: var(--font-roboto), arial, sans-serif;
+  --font-body: arial, helvetica, sans-serif;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-md: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.75rem;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+
+  --radius-sm: 0.5rem;
+  --radius-md: 0.875rem;
+  --radius-full: 999px;
+
+  --column-width: 45rem;
+
+  --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --duration-fast: 120ms;
+  --duration-base: 180ms;
+}

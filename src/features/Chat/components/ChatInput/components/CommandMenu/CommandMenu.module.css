@@ -1,0 +1,50 @@
+.menu {
+  position: absolute;
+  bottom: 100%;
+  inset-inline: var(--space-4);
+  max-height: 50vh;
+  margin: 0;
+  padding: var(--space-1);
+  overflow-y: auto;
+  border: 1px solid rgb(46 58 110 / 14%);
+  border-radius: var(--radius-md);
+  background: rgb(255 255 255 / 85%);
+  box-shadow: 0 8px 24px rgb(46 58 110 / 12%);
+  list-style: none;
+  backdrop-filter: blur(16px) saturate(1.4);
+  animation: rise var(--duration-base) var(--ease-out);
+}
+
+.option {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background-color var(--duration-fast) var(--ease-out);
+}
+
+.active {
+  background: rgb(91 200 224 / 18%);
+}
+
+.name {
+  flex: none;
+  color: var(--color-navy);
+  font-family: var(--font-heading);
+}
+
+.description {
+  overflow: hidden;
+  font-size: var(--text-sm);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+}

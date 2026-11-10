@@ -1,0 +1,87 @@
+.notice {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-3);
+  padding: var(--space-1) var(--space-1) var(--space-1) var(--space-3);
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  color: var(--color-navy);
+  font-size: var(--text-sm);
+  line-height: 1.4;
+  animation: rise var(--duration-base) var(--ease-out);
+}
+
+/* Without an action the block keeps even padding on both sides. */
+.notice:not(:has(.action)) {
+  padding-block: var(--space-2);
+  padding-right: var(--space-3);
+}
+
+.neutral {
+  background: var(--color-surface);
+}
+
+/* The brand has no red, so errors use a soft wash of Hilbi Pink. */
+.error {
+  border-color: rgb(255 79 139 / 30%);
+  background: rgb(255 79 139 / 8%);
+}
+
+.text {
+  flex: 1;
+  min-width: 0;
+  padding-block: var(--space-1);
+}
+
+/* Square-ish rather than a pill, so it sits inside the block. The radius is
+   the block's radius minus its inner padding. */
+.action {
+  flex: none;
+  height: 1.875rem;
+  padding: 0 var(--space-3);
+  border: 1px solid rgb(255 79 139 / 25%);
+  border-radius: 0.25rem;
+  background: var(--color-white);
+  color: var(--color-navy);
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  transition:
+    border-color var(--duration-fast) var(--ease-out),
+    box-shadow var(--duration-fast) var(--ease-out);
+}
+
+.action:disabled {
+  cursor: progress;
+}
+
+.action:hover:not(:disabled) {
+  border-color: rgb(255 79 139 / 55%);
+  box-shadow: 0 1px 4px rgb(255 79 139 / 15%);
+}
+
+.spinner {
+  width: 0.75rem;
+  height: 0.75rem;
+  border: 2px solid rgb(46 58 110 / 20%);
+  border-top-color: var(--color-navy);
+  border-radius: 50%;
+  animation: spin 700ms linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}

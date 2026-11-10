@@ -1,0 +1,61 @@
+/* The rail is the signature of generated content: it grows with the answer
+   and stays beside it, so nothing the model wrote sits outside of it. */
+.message {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding-left: var(--space-4);
+  animation: rise var(--duration-base) var(--ease-out);
+}
+
+.message::before {
+  position: absolute;
+  inset-block: 0;
+  left: 0;
+  width: 2px;
+  border-radius: var(--radius-full);
+  background: var(--color-cyan);
+  content: '';
+  transition: background-color var(--duration-base) var(--ease-out);
+}
+
+/* A failed answer keeps its rail, in the error colour of the notice below. */
+.failed::before {
+  background: var(--color-pink);
+}
+
+.active::after {
+  position: absolute;
+  bottom: -0.25rem;
+  left: -0.1875rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--color-cyan);
+  content: '';
+  animation: tip 1.2s ease-in-out infinite;
+}
+
+.label {
+  color: var(--color-navy);
+  font-family: var(--font-heading);
+  font-size: var(--text-xs);
+}
+
+.component {
+  animation: rise var(--duration-base) var(--ease-out);
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+@keyframes tip {
+  50% {
+    transform: scale(0.6);
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "name": "hilbi-assignment",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write src",
+    "icons": "rm -rf src/shared/ui/icons && svgr --config-file svgr.config.mjs --out-dir src/shared/ui/icons src/shared/assets/icons && prettier --write src/shared/ui/icons && eslint --fix src/shared/ui/icons"
+  },
+  "dependencies": {
+    "@ai-sdk/react": "4.0.158",
+    "ai": "7.0.154",
+    "classnames": "^2.5.1",
+    "next": "16.4.5",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "react-markdown": "^10.1.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@svgr/cli": "8.1.0",
+    "@testing-library/dom": "^10.4.2",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.8",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.5",
+    "jsdom": "^31.0.0",
+    "prettier": "^3.9.10",
+    "typescript": "^5",
+    "vitest": "^5.1.0"
+  },
+  "packageManager": "pnpm@11.1.2"
+}

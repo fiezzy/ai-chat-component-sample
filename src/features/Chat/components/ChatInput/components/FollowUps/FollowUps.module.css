@@ -1,0 +1,23 @@
+/* One scrollable row, so the suggestions never push the input up. */
+.followUps {
+  display: flex;
+  gap: var(--space-2);
+  width: 100%;
+  max-width: var(--column-width);
+  margin-inline: auto;
+  padding: 0 var(--space-4) 0 calc(var(--space-4) + var(--space-2));
+  overflow-x: auto;
+  scrollbar-width: none;
+  animation: rise var(--duration-base) var(--ease-out);
+}
+
+.followUps > * {
+  flex: none;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+}

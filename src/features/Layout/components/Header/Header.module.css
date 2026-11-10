@@ -1,0 +1,16 @@
+.header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  width: 100%;
+  max-width: var(--column-width);
+  margin-inline: auto;
+  padding: var(--space-4);
+}
+
+.title {
+  color: var(--color-navy);
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: 500;
+}

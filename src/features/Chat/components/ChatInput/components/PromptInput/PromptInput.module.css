@@ -1,0 +1,30 @@
+/* The radius equals half the single-line height, so one line reads as a pill
+   and longer text keeps soft corners. */
+.field {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--space-2);
+  padding: 0.375rem 0.375rem 0.375rem var(--space-5);
+  border: 1px solid var(--color-line);
+  border-radius: 1.625rem;
+  background: var(--color-white);
+  box-shadow: 0 2px 12px rgb(46 58 110 / 8%);
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  max-height: 10rem;
+  padding: 0.5rem 0;
+  border: 0;
+  outline: none;
+  background: none;
+  color: var(--color-navy);
+  line-height: 1.5;
+  field-sizing: content;
+  resize: none;
+}
+
+.input::placeholder {
+  color: var(--color-text);
+}

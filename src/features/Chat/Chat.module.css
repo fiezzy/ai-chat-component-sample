@@ -1,0 +1,63 @@
+.chat {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 0;
+}
+
+/* The conversation and what floats over its lower edge. */
+.body {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+}
+
+.scroll {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.content {
+  width: 100%;
+  min-height: 100%;
+  max-width: var(--column-width);
+  margin-inline: auto;
+  padding-inline: var(--space-4);
+}
+
+/* No background of its own: the conversation stays visible behind it. */
+.overlay {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  padding-bottom: var(--space-2);
+  pointer-events: none;
+}
+
+.overlay > * {
+  pointer-events: auto;
+}
+
+.jump {
+  animation: appear var(--duration-base) var(--ease-out);
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+.liveRegion {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}

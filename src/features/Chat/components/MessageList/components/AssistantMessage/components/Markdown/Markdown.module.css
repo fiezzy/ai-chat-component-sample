@@ -1,0 +1,36 @@
+.markdown {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.markdown strong,
+.markdown h3 {
+  color: var(--color-navy);
+}
+
+.markdown h3 {
+  font-family: var(--font-heading);
+  font-size: var(--text-md);
+  font-weight: 500;
+}
+
+.markdown ul,
+.markdown ol {
+  padding-left: var(--space-5);
+}
+
+.markdown li::marker {
+  color: var(--color-navy);
+}
+
+.word {
+  animation: word-in 560ms var(--ease-out) both;
+}
+
+@keyframes word-in {
+  from {
+    opacity: 0;
+    filter: blur(2px);
+  }
+}

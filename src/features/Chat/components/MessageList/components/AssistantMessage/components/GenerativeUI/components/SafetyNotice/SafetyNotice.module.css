@@ -1,0 +1,37 @@
+/* Same soft wash of Hilbi Pink as the error notice, so urgency reads at a
+   glance without a hard frame. */
+.notice {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid rgb(255 79 139 / 25%);
+  border-radius: var(--radius-md);
+  background: rgb(255 79 139 / 7%);
+}
+
+/* Sized to the title's line, so it reads as part of the heading. */
+.icon {
+  flex: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 0.125rem;
+  color: var(--color-pink);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.title {
+  color: var(--color-navy);
+  font-family: var(--font-heading);
+  line-height: 1.4;
+}
+
+.text {
+  font-size: var(--text-sm);
+  line-height: 1.5;
+}

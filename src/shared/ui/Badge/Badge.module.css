@@ -1,0 +1,8 @@
+.badge {
+  padding: 0.125rem var(--space-3);
+  border-radius: var(--radius-full);
+  background: var(--color-cyan);
+  color: var(--color-navy);
+  font-family: var(--font-heading);
+  font-size: var(--text-xs);
+}
